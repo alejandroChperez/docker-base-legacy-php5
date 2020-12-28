@@ -1,0 +1,18 @@
+version: "3" 
+services:
+ apache_php5.2:
+    restart: always
+    container_name: nombre_proyecto_php5.2
+    build: .
+    volumes:
+      # Montamos nuestra web desde fuera en el directorio web del contenedor
+      - /var/www/html/nombre_proyecto:/var/www/html/nombre_proyecto
+      # log apache
+      - $PWD/log:/var/log/apache2
+      # archivo de configuracion de apache
+      - $PWD/conf:/etc/apache2/sites-enabled
+      # php ini
+      - $PWD/ini:/etc/php/apache2-php5.2
+      - $PWD/ini:/etc/php/cli-php5.2
+    ports:
+      - 9002:80
