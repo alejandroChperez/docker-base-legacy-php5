@@ -137,4 +137,4 @@ Por ultimo paso corroborar que el sitio este levantado.<br>
 **NOTA:** Si requiere otros módulos que activar en el php o agregar más configuración en apache, debera consultar la documentación. 
 El proyecto es unicamente para levantar sitios Legacy y debera probar cada funcionamiento del sistema.
 
-**NOTA:** Se convirtio en volumen el archivo **php.ini** por si requiere de hacer un mnodifación en ella.
+**NOTA:** Se convirtio en volumen el archivo **php.ini** por si requiere de hacer un modifación en ella. Estos cambios debe generarlos cuando el contenedor este abajo.
