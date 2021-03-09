@@ -12,7 +12,6 @@ services:
       # archivo de configuracion de apache
       - $PWD/conf:/etc/apache2/sites-enabled
       # php ini
-      - $PWD/ini:/etc/php/apache2-php5.2
-      - $PWD/ini:/etc/php/cli-php5.2
+      - $PWD/ini/php.ini:/etc/php/apache2-php5.2/php.ini
     ports:
       - 9002:80
