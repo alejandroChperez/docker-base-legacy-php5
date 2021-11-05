@@ -1,5 +1,8 @@
 FROM ubuntu:12.04
 
+# ESTE COMANDO SUSTITUYE LAS URL DE UBUNTU POR OLDREALEASE ESTO POR SER UNA VERSION OBSOLETA. !!! IMPORTANTE ¡¡¡
+sudo sed -i.bak -r 's/(archive|security).ubuntu.com/old-releases.ubuntu.com/g' /etc/apt/sources.list
+
 # Install apache
 RUN apt-get update && \
     RUNLEVEL=1 apt-get install -y --no-install-recommends \
