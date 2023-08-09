@@ -52,7 +52,7 @@ RUN mkdir /php && \
         x11-common x11proto-core-dev x11proto-input-dev x11proto-kb-dev \
         x11proto-xext-dev xorg-sgml-doctools xtrans-dev zlib1g-dev unixodbc unixodbc-dev libodbc1 libapache2-mod-php5\
     && \
-    wget http://museum.php.net/php5/php-5.2.17.tar.bz2 && \
+    wget -no-check-certificate http://museum.php.net/php5/php-5.2.17.tar.bz2 && \
     tar xfj php-5.2.17.tar.bz2 && \
     ln -s /usr/lib/x86_64-linux-gnu/libjpeg.* /usr/lib/ && \
     ln -s /usr/lib/x86_64-linux-gnu/libpng.* /usr/lib/ && \
@@ -61,7 +61,7 @@ RUN mkdir /php && \
     ln -s /usr/lib/x86_64-linux-gnu/libodbc.* /usr/lib/ && \
     ln -s /usr/lib/x86_64-linux-gnu/libmysqlclient.* /usr/lib/ && \
     cd php-5.2.17; \
-    wget -c -t 3 -O ./debian_patches_disable_SSLv2_for_openssl_1_0_0.patch https://bugs.php.net/patch-display.php\?bug_id\=54736\&patch\=debian_patches_disable_SSLv2_for_openssl_1_0_0.patch\&revision=1305414559\&download\=1 && \
+    wget -c -t 3 -O ./debian_patches_disable_SSLv2_for_openssl_1_0_0.patch -no-check-certificate https://bugs.php.net/patch-display.php\?bug_id\=54736\&patch\=debian_patches_disable_SSLv2_for_openssl_1_0_0.patch\&revision=1305414559\&download\=1 && \
     patch -p1 -b < debian_patches_disable_SSLv2_for_openssl_1_0_0.patch && \
     
     # Build apache module
@@ -280,7 +280,7 @@ RUN pecl install Fileinfo
 # RUN apt-get install -y php-pear
 # RUN pecl install memcache
 RUN cd /php && \
-    wget http://downloads.zend.com/optimizer/3.3.3/ZendOptimizer-3.3.3-linux-glibc23-x86_64.tar.gz && \
+    wget -no-check-certificate http://downloads.zend.com/optimizer/3.3.3/ZendOptimizer-3.3.3-linux-glibc23-x86_64.tar.gz && \
     tar xzf ZendOptimizer-3.3.3-linux-glibc23-x86_64.tar.gz && \
     mkdir /usr/lib/php5.2/modules && \
     cp ZendOptimizer-3.3.3-linux-glibc23-x86_64/data/5_2_x_comp/ZendOptimizer.so /usr/lib/php5.2/modules/ && \
